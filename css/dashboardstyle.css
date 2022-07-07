@@ -1,0 +1,243 @@
+/* colors
+ #ED1C5B; light 
+ #E20E4E; dark
+*/
+
+/* reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* wrapper atau menu atas */
+
+.wrapper{ 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .wrapper .navbar{
+    background: #fff;
+    display: flex;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0px 1px 5px gray;
+    justify-content: space-between;
+  }
+
+.wrapper .navbar .left{
+    display: flex;
+    background: #2756b2;
+    width: 200px;
+    height: 100%;
+    box-shadow: 0px 1px 5px #205eda;
+    text-align: center;
+    justify-content: center;
+}
+
+.wrapper .navbar .left .logo{
+    width: 85%;
+}
+
+.wrapper .navbar .right{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-right: 50px;
+}
+
+#usericon{
+    font-size: 30px;
+    margin: 0px 10px;
+}
+
+
+
+.wrapper .navbar ul li {
+    align-content: left;
+    list-style: none;
+    color: grey;
+}
+
+.wrapper .navbar ul li a:hover {
+ color: #000000;
+}
+
+.wrapper .navbar ul li a{
+  color: gray;
+  }
+
+  .wrapper .navbar .right ul li a{
+    display: flex;
+    align-items: center;
+    height: auto;
+  }
+  
+  
+
+  .wrapper .navbar .right a{
+    text-align: right;
+  }
+  
+  .wrapper .navbar .right a span{
+    font-size: 15px;
+  }
+  
+  .wrapper .navbar .right ul li{
+    position: relative;
+  }
+  
+  .wrapper .navbar .right ul li .dropdown{
+    position: absolute;
+    top: 60px;
+    width: 130px;
+    right: 0;
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    padding: 10px px;
+    box-shadow: 1px 1px 3px gray;
+    border-radius: 7px;
+    display: none;
+  }
+  
+  #textprofile{
+    margin-left: 5px;
+    color: #000000;
+  }
+
+  #textsignout{
+    margin-left: 5px;
+    color: #000000;
+  }
+
+  .wrapper .navbar .right ul li .dropdown ul li a{
+    padding: 10px 20px;
+    border-radius: 7px;
+    color: #000000;
+  }
+
+  #profilebox{
+  box-shadow: 0 1px 3px -2px gray;
+
+}
+
+#profilebox:hover{
+  font-weight: bold;
+  border-radius: 7px;
+    box-shadow: 0.5px 0.5px 5px rgb(173, 173, 173);
+    transition: 0.4s;
+}
+  .wrapper .navbar .right ul li .dropdown ul li a:hover{
+    font-weight: bold;
+    color: #000000;
+    box-shadow: 0.5px 0.5px 5px rgb(173, 173, 173);
+    transition: 0.4s;
+  }
+
+  
+  .wrapper .navbar .right ul li .dropdown .fas{
+    margin-right: 10px;
+  }
+  
+  .wrapper .navbar .right ul li .dropdown:before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(70%);
+    border: 10px solid;
+    border-color: transparent transparent rgb(255, 255, 255) transparent;
+  
+}
+
+  
+  .wrapper .navbar .right ul li.active .dropdown{
+    display: block;
+    transition: 0.4s;
+}
+
+
+  .wrapper .navbar .right ul li.active a #dropicon {
+    color: #000000;
+    transform: rotate(-180deg);
+  }
+
+/* Sidebar atau menu samping  */
+  .sidebar{
+    position: fixed;
+    background: #2756b2;
+    width: 200px;
+    height: 100%;
+    padding: 75px 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+ #dashboard {
+    display: flex;
+    background-color: #899CC4;
+    align-items: center;
+    font-weight: bold;
+    padding-left: 18px;
+    border-radius: 5px;
+}
+
+.sidebar ul li {
+    display: flex;
+    height: 40px;
+    width: auto;
+    margin: 15px 10px;
+    align-items: center;
+}
+
+.sidebar ul li:hover {
+    display: flex;
+    background-color: #899CC4;
+    align-items: center;
+    border-radius: 5px;
+    padding-left: 20px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+
+.sidebar ul li a{
+    font-size: 15px;
+    color: #ffffff;
+    padding: 0 20px;
+
+}
+.sidebar ul li a:hover{
+    color: #ffffff;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+
+
+
+
+/* Main Content atau menu utama  */
+
+.main{
+    padding-top: 105px;
+    padding-left: 300px;
+}
+
+.main h2{
+    color: #2756b2;
+    font-weight: bold;
+    font-size: 30px;
+    font-style: Poppins;
+}
