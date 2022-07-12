@@ -4,30 +4,30 @@
     if($_SESSION['userweb']==""){
       header("location: login.php");
     }
-    $username=$_SESSION['userweb'];
-    $qry = mysqli_query($koneksi, "SELECT * FROM profile WHERE username='$username'");
-    $result = $qry;
+    $id=$_GET['kegiatan'];
+    $qry = mysqli_query($koneksi, "SELECT * FROM kegiatan WHERE no='$id'");
+    ($data = mysqli_fetch_array($qry));
+    $future=$data['tanggalmulai'];
+    $d= new DateTime($future);
+    $hitung= $d->diff(new DateTime())->format('%R%a');
+    if($hitung>0){
+      $hitung=0;
+    }
+      else{
+        $hitung= $hitung*(-2)-(-$hitung);
+    }
+    
 ?>
 
-<?php
-if(mysqli_num_rows($result)>0){
-  $data_user = mysqli_fetch_array($result);
-  $_SESSION["nama"]=$data_user["username"];
-  $_SESSION["nomor"]=$data_user["nomor"];
-  $_SESSION["alamat"]=$data_user["alamat"];
-  $_SESSION["email"]=$data_user["email"];
-  $_SESSION["password"]=$data_user["password"];
-  $_SESSION["foto"]=$data_user["foto"];
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/overviewkegiatan.css?<?php echo time();?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   </head>
@@ -35,7 +35,7 @@ if(mysqli_num_rows($result)>0){
     <div class="sidebar">
       <ul class="nav">
         <li id="dashboard">
-          <a href="#">
+          <a href="dashboard.php">
             <i class="bi bi-house-door"></i>
             <span>Dashboard</span>
           </a>
@@ -96,15 +96,22 @@ if(mysqli_num_rows($result)>0){
       </div>
     </div>
     <div class="main">
-    <h2>DASHBOARD</h2>
-    <P>Ini Halaman Dashboard</P>
+      <h2>OVERVIEW KEGIATAN</h2>
+      <P>Ini Halaman overview Kegiatan</P>
+        <div class="container">
+          <div class="atas">
+            <span class="hari"><?php echo $hitung; ?> Hari Lagi !</span>
+            <span><h3><?php echo $data['jenis'] ;?></span>
+            <span><a href=editkegiatan.php?kegiatan=<?php echo $data['no'];?>><button>Edit</button></a></h3></span>
+          </div>
+          <span><?php echo $data['nama'] ; echo"   "; ?></span>
+          <p><?php echo $data['deskripsi'] ;?></p>
+        </div>
     </div>
     <script>
     document.querySelector(".right ul li").addEventListener("click", function(){
     this.classList.toggle("active");
     });
 </script> 
-<?php
-?>
   </body>
 </html>

@@ -12,9 +12,10 @@
 }
 
 body{
+    display: flex;
     box-sizing: border-box;
-    background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aliceblue;
 }
 
 /* wrapper atau menu atas */
@@ -187,7 +188,7 @@ body{
     z-index: 1;
 }
 
- #dashboard {
+ #kegiatan {
     display: flex;
     background-color: #899CC4;
     align-items: center;
@@ -209,7 +210,7 @@ body{
     background-color: #899CC4;
     align-items: center;
     border-radius: 5px;
-    padding-left: 20px;
+    padding-left: 18px;
     font-weight: bold;
     transition: 0.4s;
 }
@@ -228,19 +229,94 @@ body{
 }
 
 
-
-
-
 /* Main Content atau menu utama  */
 
-.main{
+.main {
+    width: 100%;
+    height: 100%;
     padding-top: 105px;
-    padding-left: 300px;
+    padding-left: 200px;
 }
 
 .main h2{
+  margin-left: 100px;
     color: #2756b2;
     font-weight: bold;
     font-size: 30px;
     font-style: Poppins;
+}
+
+.main .container{
+  max-width: fit-content;
+  height: auto;
+  padding: 25px 0;
+  margin: 20px auto;
+  background-color: none;
+  border-radius: 10px;
+  box-shadow: 0;
+}
+
+
+.main .container .nav{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.main .container .nav a .button {
+  display: inline-flex;
+  width: 170px;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  background-color: #2756b2;
+  cursor: pointer;
+  color: #ffffff;
+  align-items: center;
+  padding: 10px;
+}
+
+.main .container .nav a .button .button_text{
+  font-size: 15px;
+  font-weight: bold;
+}
+.main .container .nav a .button .button_icon{
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+
+.main .container table{
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 15px;
+    width: auto;
+    border-radius: 7px 7px 0 0;
+    overflow: hidden;
+    box-shadow: 0 1px 5px grey;
+}
+
+.main .container table thead tr{
+  background-color: #2756b2;
+  color:#ffffff;
+  text-align: left;
+}
+
+.main .container table th,
+.main .container table td{
+  padding: 10px 20px;
+  min-width: 100%;
+}
+
+.main .container table tbody tr{
+  border-bottom: 1px solid #dddddd;
+  background-color: #ffffff;
+}
+
+.main .container table tbody tr:nth-of-type(even){
+  background-color: #f3f3f3;
+}
+
+.main .container table tbody tr:last-of-type{
+ border-bottom: 2px solid #2756b2;
 }

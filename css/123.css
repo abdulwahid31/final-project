@@ -12,9 +12,10 @@
 }
 
 body{
+    display: flex;
     box-sizing: border-box;
-    background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aliceblue;
 }
 
 /* wrapper atau menu atas */
@@ -66,6 +67,8 @@ body{
     border: 1px solid grey;
 }
 
+
+
 .wrapper .navbar ul li {
     align-content: left;
     list-style: none;
@@ -77,7 +80,7 @@ body{
 }
 
 .wrapper .navbar ul li a{
-  color: gray;
+  color: rgb(0, 0, 0);
   }
 
   .wrapper .navbar .right ul li a{
@@ -187,14 +190,7 @@ body{
     z-index: 1;
 }
 
- #dashboard {
-    display: flex;
-    background-color: #899CC4;
-    align-items: center;
-    font-weight: bold;
-    padding-left: 18px;
-    border-radius: 5px;
-}
+
 
 .sidebar ul li {
     display: flex;
@@ -209,7 +205,7 @@ body{
     background-color: #899CC4;
     align-items: center;
     border-radius: 5px;
-    padding-left: 20px;
+    padding-left: 18px;
     font-weight: bold;
     transition: 0.4s;
 }
@@ -233,14 +229,134 @@ body{
 
 /* Main Content atau menu utama  */
 
-.main{
+.main {
+    width: 100%;
+    height: 100%;
     padding-top: 105px;
-    padding-left: 300px;
+    padding-left: 200px;
 }
 
 .main h2{
+  margin-left: 100px;
     color: #2756b2;
     font-weight: bold;
     font-size: 30px;
     font-style: Poppins;
+}
+
+
+.main .container{
+    width: 700px;
+    height: auto;
+    padding: 25px 75px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px grey;
+}
+
+.main .container .atas{
+    width: 100%;
+    height: auto;
+    color: #000000;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    font-style: Poppins;
+}
+
+#id_pasword{
+  position: relative;
+}
+
+#togglePassword{
+  position: absolute;
+  margin-top: -33px;
+  margin-left: 285px;
+  cursor: pointer;
+}
+
+.main .container form .tengah {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 25px;
+ border-top: 2px solid #2756b2;
+}
+
+
+
+.main .container form .tengah .kiri{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-top: 10px;
+}
+
+.main .container   form .tengah .kiri label{
+  color: #2756b2;
+  font-weight: bold;
+}
+
+.main .container   form .tengah .kiri input {
+  width: 300px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color:#000000;
+  padding-left: 10px;
+  border: 1px solid#205eda;
+  border-radius: 5px;
+}
+
+.main .container form .tengah .kanan{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.main .container form .tengah .kanan label{
+  color: #2756b2;
+  font-weight: bold;
+}
+
+.main .container form .tengah .kanan input{
+  width: 300px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color:#000000;
+  padding-left: 10px;
+  border: 1px solid#205eda;
+  border-radius: 5px;
+}
+
+.main .container form .tengah .kanan input .foto{
+  display: flex;
+  width: 100px;
+}
+
+.main .container form .bawah{
+  display: flex;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.main .container form .bawah button{
+ width: 50%;
+ margin: 0 auto;
+ height: 40px;
+ color: #ffffff;
+ background-color: #2756b2;
+ border: none;
+ border-radius: 10px;
+ cursor: pointer;
+}
+
+.main .container form .bawah button:hover{
+  background-color: #001c55;
 }

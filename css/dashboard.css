@@ -12,9 +12,10 @@
 }
 
 body{
+    display: flex;
     box-sizing: border-box;
-    background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aliceblue;
 }
 
 /* wrapper atau menu atas */
@@ -209,7 +210,7 @@ body{
     background-color: #899CC4;
     align-items: center;
     border-radius: 5px;
-    padding-left: 20px;
+    padding-left: 18px;
     font-weight: bold;
     transition: 0.4s;
 }
@@ -228,17 +229,17 @@ body{
 }
 
 
-
-
-
 /* Main Content atau menu utama  */
 
-.main{
+.main {
+    width: 100%;
+    height: 100%;
     padding-top: 105px;
-    padding-left: 300px;
+    padding-left: 200px;
 }
 
 .main h2{
+  margin-left: 100px;
     color: #2756b2;
     font-weight: bold;
     font-size: 30px;

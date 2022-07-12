@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/loginstyle.css">
+    <link rel="stylesheet" href="loginstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <title>Halaman Login</title>
 </head>
@@ -54,7 +54,7 @@
         if (isset($_POST['fmasuk'])) {
             $username = $_POST['fusername'];
             $password = $_POST['fpassword'];
-            $qry = mysqli_query($koneksi,"SELECT * FROM tab_input WHERE username = '$username' AND password = md5('$password')");
+            $qry = mysqli_query($koneksi,"SELECT * FROM profile WHERE username = '$username' AND password = '$password'");
             $cek = mysqli_num_rows($qry);
             if ($cek==1) {
                 $_SESSION['userweb']=$username;
@@ -66,6 +66,6 @@
             }
         }
         ?>
-    </div>   
+    </div>
     </body>
 </html>

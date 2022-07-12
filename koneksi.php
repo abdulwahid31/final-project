@@ -1,3 +1,5 @@
 <?php
-    $koneksi = mysqli_connect("localhost","root","","input");
+    $koneksi = mysqli_connect("localhost","root","","final_project");
+
+
 ?>
