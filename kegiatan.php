@@ -83,11 +83,11 @@
       </div>
     </div>
     <div class="main">
-      <h2>KEGIATAN</h2>
-      <P>Ini Halaman Kegiatan</P>
+      <h1>KEGIATAN</h1>
+      <h2><span class="sub">Dashboard></span><span class="subsub">Kegiatan</span></h2>
         <div class="container">
           <div class="nav">
-            <i class="bi bi-search" id="search"><input></input></i>
+            <i class="bi bi-search" id="search"><form><input type="search"></input></form></i>
             <a href="tambahkegiatan.php">
               <button type="button" class="button" id="tambah">
                 <span class="button_icon">
@@ -110,16 +110,23 @@
             <tbody>
             <?php
               include "koneksi.php";
-              $qry = mysqli_query($koneksi, "SELECT * FROM kegiatan");
+              $qry = mysqli_query($koneksi, "SELECT * FROM kegiatan ORDER BY tanggalmulai DESC");
               while ($data = mysqli_fetch_array($qry)){
               $tanggal=$data["tanggalmulai"];
               $jadwal= date('d F Y', strtotime($tanggal));
+              $statuswarna=$data['status'];
+              if ($statuswarna=="Dalam Proses"){
+              $statuswarna="#FD9F00";
+              } else if($statuswarna=="Ditunda"){
+              $statuswarna="#777777";
+              } else
+              $statuswarna="#6DAE43";
               echo "
               <tr>
                 <td>$jadwal</td>
                 <td>$data[jenis]</td>
                 <td>$data[nama]</td>
-                <td>$data[status]</td>
+                <td><i class='bi bi-circle-fill' id='statuswarna' style='color: $statuswarna' ></i>$data[status]</td>
                 <td><a href=overviewkegiatan.php?kegiatan=$data[no]><i class='bi bi-three-dots'></i></a></td>
               </tr>
               ";

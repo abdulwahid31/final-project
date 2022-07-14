@@ -238,10 +238,176 @@ body{
     padding-left: 200px;
 }
 
-.main h2{
+.main h1{
   margin-left: 100px;
     color: #2756b2;
     font-weight: bold;
     font-size: 30px;
     font-style: Poppins;
+}
+
+.list{
+  margin: 20px 100px;
+}
+
+h2{
+  color: #484848;
+}
+
+#listbutton{
+  margin-top: 10px;
+  background-color: #2756b2;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#kalenderbutton{
+  margin-top: 10px;
+  background-color: #ffffff;
+  border: none;
+  color: #2756b2;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card{
+  justify-content: space-between;
+  display: flex;
+  margin-top: 15px;
+
+}
+
+.card .atas{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .atas label{
+  color: #777777;
+}
+
+.card .total .atas  label{
+  color: #ffffff;
+}
+
+.card .total{
+  width: 20%;
+  height: 30%;
+  background-color: #2756b2;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px grey;
+}
+
+.card .total i{
+  color: #2756b2;
+  font-size: 23px;
+}
+
+.card .proses{
+  width: 20%;
+  height: 30%;
+  background-color: #ffffff;
+  color: #2756b2;
+  padding: 10px 15px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px grey;
+}
+
+.card .proses i{
+  color: #FD9F00;
+  font-size: 23px;
+}
+
+.card .ditunda{
+  width: 20%;
+  height: 30%;
+  background-color: #ffffff;
+  color: #2756b2;
+  padding: 10px 15px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px grey;
+}
+
+.card .ditunda i{
+  color: #777777;
+  font-size: 23px;
+}
+
+.card .selesai{
+  width: 20%;
+  height: 30%;
+  background-color: #ffffff;
+  color: #2756b2;
+  padding: 10px 15px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px grey;
+}
+
+h3{
+  color: #484848;
+  margin: 10px 0;
+}
+
+.total h3{
+  color: #ffffff;
+}
+
+.card .selesai i{
+  color: #6DAE43;
+  font-size: 23px;
+}
+
+.listbawah{
+  margin-top: 50px;
+}
+
+.card1{
+  margin-right: 20px;
+  margin-top: 15px;
+  min-width: 330px;
+  height: 100%;
+  background-color: #FD9F00;
+  padding-top: 10px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px grey;
+}
+
+.card1 .carddalam{
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border-radius: 0 0 7px 7px;
+}
+
+.card1 .carddalam .atas{
+ display: flex;
+ justify-content: space-between;
+}
+
+.hari{
+  padding: 3px 5px;
+  width: fit-content;
+  height: auto;
+  color: #F55050;
+  background-color: #FFE7E7;
+  border-radius: 5px;
+}
+
+.tanggal{
+  color: #8C8C8C;
+}
+
+.isi{
+  margin: 5px 0;
+}
+.isi label{
+  color: #274492;
+  font-weight: bold;
 }

@@ -238,12 +238,27 @@ body{
     padding-left: 200px;
 }
 
-.main h2{
+.main h1{
   margin-left: 100px;
     color: #2756b2;
     font-weight: bold;
     font-size: 30px;
     font-style: Poppins;
+}
+
+.main h2{
+  margin-left: 100px;
+  font-size: 15px;
+}
+
+.main h2 .sub{
+  font-size: 15px;
+  color: #777777;
+}
+
+.main h2 .subsub{
+  font-size: 13px;
+  color: #748CCC;
 }
 
 .main .container{
@@ -306,11 +321,17 @@ body{
 .main .container table td{
   padding: 10px 20px;
   min-width: 100%;
+  font-size: 18px;
 }
 
 .main .container table tbody tr{
   border-bottom: 1px solid #dddddd;
   background-color: #ffffff;
+}
+
+#statuswarna{
+  font-size: 10px;
+  margin-right: 7px;
 }
 
 .main .container table tbody tr:nth-of-type(even){

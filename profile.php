@@ -123,7 +123,7 @@ if(mysqli_num_rows($result)>0){
                 </input>
                 <div class="foto">
                 <label>Foto Profile</label>
-                <input type="file" name="ffoto"></input>
+                <input type="file" name="ffoto" ></input>
                 <img src="foto/<?php echo $_SESSION["foto"];?>" width="40px">  
               </div>
               </div>

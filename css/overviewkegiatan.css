@@ -238,7 +238,7 @@ body{
     padding-left: 200px;
 }
 
-.main h2{
+.main h1{
   margin-left: 100px;
     color: #2756b2;
     font-weight: bold;
@@ -246,26 +246,366 @@ body{
     font-style: Poppins;
 }
 
+.main h2{
+  margin-left: 100px;
+  font-size: 15px;
+}
+
+.main h2 .sub{
+  font-size: 15px;
+  color: #777777;
+
+}
+
+.main h2 .subsub{
+  font-size: 13px;
+  color: #748CCC;
+}
+
 .main .container{
-  max-width: 500px;
+  max-width: fit-content;
   height: auto;
-  padding: 25px 25px;
+  padding: 25px 30px;
   margin: 20px auto;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 1px 1px 3px grey;
 }
 
-.main .container .atas .hari{
- background-color: aqua;
- color: red;
- padding: 2px 7px;
- height: auto;
+.main .container .atas {
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+}
+
+.main .container .atas .kiri{
+  margin-right: 25px;
+}
+
+.main .container .atas .kiri .hari{
+ background-color: #FFF0F0;
+ color: #F55050;
+ padding: 5px 7px;
+ height: 25px;
  width: auto;
+ font-weight: bold;
+  font-size: 15px;
  text-align: center;
+ align-content: center;
  border-radius: 5px;
 }
 
-.main .container .atas h3{
-  font-size: 40px;
+.main .container .atas .kiri h3{
+  margin-top: 10px;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #484848;
+}
+
+
+.main .container .atas .kiri h4{
+  margin-top: 10px;
+  font-size: 17px;
+  color: #484848;
+  display: flex;
+  align-items: center;
+}
+
+.main .container .atas .kiri hr{
+  width: 40px;
+  height: 1px;
+  margin: 0 15px;
+  background-color: #D9D9D9;
+}
+
+.main .container .edit button{
+  width: 70px;
+  height: 30px;
+  font-size: 15px;
+  color: #2756b2;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 7px;
+  border: solid 1px #2756b2;
+  cursor: pointer;
+}
+
+.main .container select{
+  width: 130px;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 7px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+
+#option1{
+  background-color: #FD9F00;
+}
+
+#option2{
+  background-color: #777777;
+}
+
+#option3{
+  background-color: #6DAE43;
+}
+
+#data1 {
+  display: none;
+}
+
+.main .container .Reschedule button{
+  margin-top: 5px;
+  width: 100%;
+  height: 30px;
+  font-size: 15px;
+  color: #ffffff;
+  background-color: #2756b2;
+  text-align: center;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+}
+
+h4 .sub{
+  font-size: 12px;
+  color: #484848;
+}
+
+.main .container .isi{
+  margin: 20px 0;
+  max-width: 750px;
+  text-align: justify;
+  color: #484848;
+}
+
+.main .container .isi label{
+  font-weight: bold;
+}
+
+
+.main .container table{
+  border-collapse: collapse;
+  margin: 25px auto;
+  font-size: 10px;
+  width: 100%;
+  border-radius: 7px 7px 7px 7px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px grey;
+}
+
+.main .container table thead tr{
+background-color: #2756b2;
+color:#ffffff;
+text-align: left;
+
+}
+
+.main .container table th,
+.main .container table td{
+padding: 10px 20px;
+min-width: 100%;
+font-size: 15px;
+height: 20px;
+}
+
+.main .container table tbody tr{
+border-bottom: 1px solid #dddddd;
+background-color: #ffffff;
+}
+
+
+.main .container table tbody tr:nth-of-type(even){
+background-color: #f3f3f3;
+}
+
+.main .container table tbody tr:last-of-type{
+border-bottom: 2px solid #2756b2;
+}
+
+
+.main .popup1{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+  position: fixed;
+  margin-top: 35px;
+  margin-left: 100px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+
+label{
+  font-size: 13px;
+  color: #2D2F33;
+  font-weight: bold;
+}
+.main .popup1 .content{
+  padding: 30px 30px;
+  height: auto;
+  width: fit-content;
+  background-color: #ffffff;
+  margin: 0 auto;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px grey;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(.25);
+  opacity: 0;
+  transition: all .5s .1s;
+}
+
+.judulatas{
+  color: #202225;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#judulform{
+  font-size: 15px;
+}
+
+thead .close{
+  right: 0;
+  top: 0;
+  float: top;
+  float: right;
+  font-size: 30px;
+  margin-left: 190px;
+  margin-top: -15px;
+}
+
+.main .popup1 .content table tr td input{
+  height: 30px;
+  width: 300px;
+  padding: 5px 10px;
+  border: 1px solid #2756b2;
+  border-radius: 7px;
+  margin-top: 7px;
+}
+
+#des{
+  height: 70px;
+  width: 300px;
+  padding: 5px 10px;
+  border: 1px solid #2756b2;
+  border-radius: 7px;
+  margin-top: 7px;
+}
+
+#popup1:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+#popup1:target .content{
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+}
+
+
+.main .popup2{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+  position: fixed;
+  margin-top: 35px;
+  margin-left: 100px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+
+.main .popup2 .content{
+  padding: 30px 30px;
+  height: auto;
+  width: fit-content;
+  background-color: #ffffff;
+  margin: 0 auto;
+  border-radius: 7px;
+  box-shadow: 1px 1px 3px grey;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(.25);
+  opacity: 0;
+  transition: all .5s .1s;
+}
+
+
+.main .popup2 .content table tr td input{
+  height: 30px;
+  width: 125px;
+  padding: 5px 10px;
+  border: 1px solid #2756b2;
+  border-radius: 7px;
+  margin-top: 7px;
+}
+
+
+#des2{
+  height: 75px;
+  width: 300px;
+  padding: 5px 10px;
+  border: 1px solid #2756b2;
+  border-radius: 7px;
+  margin-top: 7px;
+}
+
+#popup2:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+#popup2:target .content{
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+}
+
+#cancel {
+  background-color: #ffffff;
+  color: #2756b2;
+  border: 1px solid #2756b2;
+  border-radius: 5px;
+  height: 30px;
+  width: 55px;
+  margin: 7px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+#add{
+  color: #2962FF;
+  border: none;
+  background-color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#submit{
+  background-color: #2756b2;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  width: 55px;
+  margin: 7px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+tfoot{
+ float: right;
 }

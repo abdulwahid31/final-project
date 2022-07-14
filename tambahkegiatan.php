@@ -5,8 +5,12 @@
       header("location: login.php");
     }
     $username=$_SESSION['userweb'];
-    $qry = mysqli_query($koneksi, "SELECT * FROM kegiatan WHERE no IN(SELECT MAX(no) FROM kegiatan)");
-    $data= mysqli_fetch_array($qry);
+    
+    $qry = mysqli_query($koneksi, "SELECT * FROM kegiatan");
+    ($data = mysqli_num_rows($qry));
+    
+    $qry2 = mysqli_query($koneksi, "SELECT * FROM tahapan");
+    ($data2 = mysqli_num_rows($qry2));
 ?>
 
 
@@ -18,7 +22,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="css/tambahkegiatan.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/tambahkegiatan.css?<?php echo time();?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   </head>
@@ -87,71 +93,116 @@
       </div>
     </div>
     <div class="main">
-      <h2>TAMBAH KEGIATAN</h2>
+      <h1>TAMBAH KEGIATAN</h1>
+        <h2><span class="sub">Dashboard>Kegiatan></span><span class="subsub">Tambah Kegiatan</span></h2>
         <div class="container">
-          <form method="POST">
-            <table>
-              <tr>
-                <td>
-                  <label id="judulform">TAMBAH KEGIATAN</label>
-                </td>      
+          <form method="POST" name="add_name" id="add_name">
+            <table class="table table-bordered" id="dynamic_field">
+              <thead>
+                <tr>
+                  <th colspan="3">
+                    <label id="judulform"><h3>Detail Kegiatan</h3></label>
+                  </th> 
+                  <th></th>     
                 </tr>
-              <tr>
-                <td>      
-                  <label>Nama Kegiatan</label><br>
-                  <input type="text" name="nama" autocomplete="current-password" required="" placeholder="Nama Kegiatan"></input>
-                </td>
-              </tr>
-              <tr>
-                <td>      
-                  <label>Jenis Kegiatan</label><br>
-                  <input type="text" name="jenis" autocomplete="current-password" required="" placeholder="Jenis Kegiatan"></input>
-                </td>
-              </tr>
-              <tr>
-                <td>      
-                  <label>Tanggal Pelaksanaan</label><br>
-                  <input type="date" name="tanggalmulai" autocomplete="current-password" required="" placeholder="tanggal"></input>
-                  <span>s/d</span>
-                  <input type="date" name="tangalselesai" autocomplete="current-password" required="" placeholder="tanggal"></input>
-                </td>
-              </tr>
-              <tr>
-                <td>      
-                  <label>Deskripsi Kegiatan</label><br>
-                  <input type="text" name="deskripsi" autocomplete="current-password" required="" placeholder="Deskripsi Kegiatan"></input>
-                </td>
-              </tr>
-              <tr>
-                <td>      
-                  <label>Tambah Tahapan</label><br>
-                  <input type="text" name="tahapan" autocomplete="current-password" required="" placeholder="Tambah Kegiatan"></input>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                <a href="kegiatan.php"><button type="button" name="cancel">Cancel</button></a>
-                <button type="submit" name="save">Save</button>
-                </td>
-              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="3">      
+                    <label>Nama Kegiatan</label><br>
+                    <input type="text" name="nama" autocomplete="current-password" required="" placeholder="Nama Kegiatan"></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">      
+                    <label>Jenis Kegiatan</label><br>
+                    <input type="text" name="jenis" autocomplete="current-password" required="" placeholder="Jenis Kegiatan"></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">      
+                    <label> Tanggal Pelaksanaan</label><br>
+                    <input id="in1" type="date" name="tanggalmulai" autocomplete="current-password" required="" placeholder="Y-m-d"></input>
+                    s/d
+                    <input id="in2"type="date" name="tanggalselesai" autocomplete="current-password" required="" placeholder="tanggal"></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">      
+                    <label>Deskripsi Kegiatan</label><br>
+                    <textarea id="des" type="text" name="deskripsi" autocomplete="current-password" required="" placeholder="Deskripsi Kegiatan"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">      
+                    <label>Tambah Tahapan</label><br>
+                    <input type="text" name="tahapan[]" id="tahapan" placeholder="Tambah Tahapan" class="form-control name_list"></input>
+                  </td>
+                </tr>
+              </body>
+              <tfoot>
+                <tr>
+                  <td>
+                    <button type="button" name="add" id="add" class="btn btn-success"><i class="bi bi-plus-lg"></i> Add a Line</button>
+                  </td>
+                </tr>
+                <tr class="button">
+                  <td colspan="3">
+                    <a href="kegiatan.php"><button type="button" id="cancel" name="cancel">Cancel</button></a>
+                    <button type="submit" name="submit" id="submit" class="btn btn-info" value="Submit">Save</button>
+                  </td>
+                </tr>
+              </tfoot>
             </table>
           </form>
         </div>
     </div>
+    <script>
+    $(document).ready(function(){
+	var i=1;
+	$('#add').click(function(){
+		i++;
+		$('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="tahapan[]" id="tahapan" placeholder="Tamabah Tahapan" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
+	});
+	$(document).on('click', '.btn_remove', function(){
+		var button_id = $(this).attr("id"); 
+		$('#row'+button_id+'').remove();
+	});
+	
+  });
+</script>
     <script>
     document.querySelector(".right ul li").addEventListener("click", function(){
     this.classList.toggle("active");
     });
 </script> 
 <?php
-    if(isset($_POST['save'])){
-      $nomor=$data['no'];
+    if(isset($_POST['submit'])){
+      $nomor=$data;
       $no=$nomor+1;
+      $nomor2=$data2;
+      $no2=$nomor2+1;
       $nama = $_POST['nama'];
       $jenis = $_POST['jenis'];
       $tanggalmulai = $_POST['tanggalmulai'];
-      $save = mysqli_query($koneksi, "INSERT INTO kegiatan (no,nama,jenis,tanggalmulai) VALUES ('$no','$nama','$jenis','$tanggalmulai')");
-    if ($save){
+      $tanggalselesai = $_POST['tanggalselesai'];
+      $deskripsi = $_POST['deskripsi'];
+      $status="Dalam Proses";
+      $save = mysqli_query($koneksi, "INSERT INTO kegiatan (no,nama,jenis,tanggalmulai,tanggalselesai,deskripsi,status) VALUES ('$no','$nama','$jenis','$tanggalmulai','$tanggalselesai','$deskripsi','$status')");
+      $number = count($_POST["tahapan"]);
+      if($number > 0)
+      {
+        for($i=0; $i<$number; $i++)
+        {
+          if(trim($_POST["tahapan"][$i] != ''))
+          {
+            $noid=$no2+$i;
+            $sql = "INSERT INTO tahapan (id,tahapan,idkegiatan) VALUES('$noid','".mysqli_real_escape_string($koneksi, $_POST["tahapan"][$i])."','$no')";
+            mysqli_query($koneksi, $sql);
+          }
+        }
+      }
+    if ($save> 0){
     ?>
     <script type="text/javascript">
       alert('Update Berhasil');
@@ -159,7 +210,7 @@
     </script>
     <?php
     } else{
-      echo"gagal";
+      echo"Update Gagal";
     } 
   } 
 ?>
