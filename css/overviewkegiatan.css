@@ -378,7 +378,7 @@ h4 .sub{
 
 .main .container .isi{
   margin: 20px 0;
-  max-width: 750px;
+  width: 750px;
   text-align: justify;
   color: #484848;
 }
@@ -411,6 +411,13 @@ padding: 10px 20px;
 min-width: 100%;
 font-size: 15px;
 height: 20px;
+}
+
+#hapus{
+  width: 20px;
+  align-items: right;
+  text-align: right;
+
 }
 
 .main .container table tbody tr{
@@ -450,7 +457,7 @@ label{
 .main .popup1 .content{
   padding: 30px 30px;
   height: auto;
-  width: fit-content;
+  width: 325px;
   background-color: #ffffff;
   margin: 0 auto;
   border-radius: 7px;
@@ -546,7 +553,7 @@ thead .close{
 
 .main .popup2 .content table tr td input{
   height: 30px;
-  width: 125px;
+  width: 123px;
   padding: 5px 10px;
   border: 1px solid #2756b2;
   border-radius: 7px;

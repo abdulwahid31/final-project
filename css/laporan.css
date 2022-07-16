@@ -188,7 +188,7 @@ body{
     z-index: 1;
 }
 
- #dashboard {
+ #laporan {
     display: flex;
     background-color: #899CC4;
     align-items: center;
@@ -246,169 +246,60 @@ body{
     font-style: Poppins;
 }
 
-.list{
-  margin: 20px 100px;
-}
-
-h2{
-  color: #484848;
-}
-
-#listbutton{
-  margin-top: 10px;
-  background-color: #2756b2;
-  border: none;
-  color: #ffffff;
+.main h2{
+  margin-left: 100px;
   font-size: 15px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-#kalenderbutton{
-  margin-top: 10px;
-  background-color: #ffffff;
-  border: none;
-  color: #2756b2;
+.main h2 .sub{
   font-size: 15px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.card{
-  justify-content: space-between;
-  display: flex;
-  margin-top: 15px;
-
-}
-
-.card .atas{
-  display: flex;
-  justify-content: space-between;
-}
-
-.card .atas label{
   color: #777777;
 }
 
-.card .total .atas  label{
-  color: #ffffff;
+.main h2 .subsub{
+  font-size: 13px;
+  color: #748CCC;
 }
 
-.card .total{
-  width: 190px;
-  height: 75px;
-  background-color: #2756b2;
-  color: #ffffff;
-  padding: 10px 15px;
-  border-radius: 7px;
-  box-shadow: 1px 1px 3px grey;
-}
-
-.card .total i{
-  color: #2756b2;
-  font-size: 20px;
-}
-
-.card .proses{
-  width: 190px;
-  height: 75px;
-  background-color: #ffffff;
-  color: #2756b2;
-  padding: 10px 15px;
-  border-radius: 7px;
-  box-shadow: 1px 1px 3px grey;
-}
-
-.card .proses i{
-  color: #FD9F00;
-  font-size: 20px;
-}
-
-.card .ditunda{
-  width: 190px;
-  height: 75px;
-  background-color: #ffffff;
-  color: #2756b2;
-  padding: 10px 15px;
-  border-radius: 7px;
-  box-shadow: 1px 1px 3px grey;
-}
-
-.card .ditunda i{
-  color: #777777;
-  font-size: 20px;
-}
-
-.card .selesai{
-  width: 190px;
-  height: 75px;
-  background-color: #ffffff;
-  color: #2756b2;
-  padding: 10px 15px;
-  border-radius: 7px;
-  box-shadow: 1px 1px 3px grey;
-}
-
-h3{
-  color: #484848;
-  margin: 10px 0;
-}
-
-.total h3{
-  color: #ffffff;
-}
-
-.card .selesai i{
-  color: #6DAE43;
-  font-size: 20px;
-}
-
-.listbawah{
-  margin-top: 50px;
-}
-
-.card1{
-  margin-right: 20px;
-  margin-top: 15px;
-  min-width: 290px;
-  height: 100%;
-  background-color: #FD9F00;
-  padding-top: 10px;
-  border-radius: 7px;
-  box-shadow: 1px 1px 3px grey;
-}
-
-.card1 .carddalam{
-  padding: 10px 20px;
-  background-color: #ffffff;
-  border-radius: 0 0 7px 7px;
-}
-
-.card1 .carddalam .atas{
- display: flex;
- justify-content: space-between;
-}
-
-.hari{
-  padding: 3px 5px;
-  width: fit-content;
+.main .container{
+  max-width: fit-content;
   height: auto;
-  color: #F55050;
-  font-weight: bold;
-  background-color: #FFE7E7;
-  border-radius: 5px;
+  padding: 25px 25px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px grey;
 }
 
-.tanggal{
-  color: #8C8C8C;
+
+label{
+  font-size: 18px;
+  font-weight: bold;
+  color: #484848;
 }
 
 .isi{
-  margin: 5px 0;
+  margin: 20px 0;
+  text-align: center;
 }
-.isi label{
-  color: #274492;
-  font-weight: bold;
+select {
+  width: 150px;
+  height: 30px;
+  color: #2756b2;
+  border: 1px solid #2756b2;
+  border-radius: 5px;
+}
+
+.tombol{
+  text-align: center;
+}
+
+#tomboltampil{
+  width: 150px;
+  height: 30px;
+  color: #fff;
+  border: none;
+  background-color: #2756b2;
+  border-radius: 5px;
+  cursor: pointer;
 }

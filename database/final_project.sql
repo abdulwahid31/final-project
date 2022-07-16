@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Jul 2022 pada 18.39
+-- Waktu pembuatan: 16 Jul 2022 pada 14.34
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.1.2
 
@@ -44,7 +44,18 @@ CREATE TABLE `kegiatan` (
 
 INSERT INTO `kegiatan` (`no`, `nama`, `jenis`, `tanggalmulai`, `tanggalselesai`, `deskripsi`, `status`, `alasan`) VALUES
 ('1', 'Pelatihan UMKM', 'Pemberdayaan', '2022-07-28', '2022-07-29', 'Pelatihan UMKM dengan Startup, oleh Kementerian', 'Dalam Proses', 'Penjadwalan ulang'),
-('2', 'WORKSHOP', 'Sosialisasi', '2022-07-23', '2022-07-28', 'Sosialisasi', 'Dalam Proses', '');
+('2', 'WORKSHOP', 'Sosialisasi', '2022-07-23', '2022-07-28', 'Sosialisasi', 'Selesai', ''),
+('3', 'Sosialisasi UMKM', 'Sosialisasi', '2022-07-30', '2022-07-31', 'hhh', 'Dalam Proses', ''),
+('4', 'WORKSHOP', 'Sosialisasi UMKM', '2022-08-02', '2022-08-04', 'nbbjbbb', 'Dalam Proses', ''),
+('5', 'Sosialisasi UMKM', 'Sosialisasi', '2022-08-05', '2022-08-06', 'hhhh', 'Dalam Proses', ''),
+('6', 'WORKSHOP', 'Sosialisasi', '2022-07-30', '2022-07-31', 'nnnn', 'Dalam Proses', ''),
+('7', 'Workshop UMKM', 'Workshop', '2022-08-06', '2022-08-13', 'nscnsncsnchks', 'Selesai', ''),
+('8', 'Sosialisasi UMKM', 'Sosialisasi', '2022-08-06', '2022-08-07', 'sncascadcdhcdhchdh', 'Dalam Proses', ''),
+('9', 'Sosialisasi UMKM', 'Sosialisasi', '2022-08-06', '2022-07-31', 'jnscc xcbxcch', 'Ditunda', ''),
+('10', 'Sosialisasi UMKM', 'Sosialisasi', '2022-07-30', '2022-07-31', 'ssncnnc bc', 'Dalam Proses', ''),
+('11', 'Sosialisasi UMKM', 'Sosialisasi', '2022-08-02', '2022-08-04', 'jnx xnmx xbxjsdgyusvdsgcvshcgasvcsahc', 'Dalam Proses', ''),
+('12', 'Sosialisasi UMKM', 'Sosialisasi', '2022-08-06', '2022-08-06', 'mnnnnn', 'Dalam Proses', ''),
+('13', 'Sosialisasi UMKM', 'Sosialisasi', '2024-08-16', '2024-12-16', 'bbb', 'Dalam Proses', '');
 
 -- --------------------------------------------------------
 
@@ -86,9 +97,11 @@ CREATE TABLE `tahapan` (
 --
 
 INSERT INTO `tahapan` (`id`, `tahapan`, `idkegiatan`) VALUES
-('1', 'Perencanaan Anggaran', '1'),
 ('2', 'Perencanaan Anggaran', '2'),
-('3', 'Perencanaan Kegiatan', '1');
+('2', 'Perencanaan Anggaran', '1'),
+('3', 'Pelaksanaan', '1'),
+('4', 'bbbb', '4'),
+('5', 'Pelaksanaan', '2');
 
 --
 -- Indexes for dumped tables

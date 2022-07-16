@@ -11,7 +11,7 @@ body{
 	justify-content: left;
 	align-items: center;
     min-height: 100vh;
-    background-image: url('images/loginbg.jpg');
+    background-image: url('images/login.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background: solid red;
@@ -20,7 +20,7 @@ body{
 
 
 .container{
-    background-color: #fff;
+    background-color: #ffffff;
 	width: 370px;
     height: auto;
 	padding: 20px 50px;

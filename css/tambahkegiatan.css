@@ -267,13 +267,17 @@ h3{
 }
 
 .main .container{
-  width: fit-content;
+  width: 420px;
   height: auto;
   padding: 25px 75px;
   margin: 20px auto;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 1px 1px 3px grey;
+}
+
+#judulform{
+  text-align: center;
 }
 
 label{

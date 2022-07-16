@@ -278,6 +278,21 @@ body{
   justify-content: space-between;
 }
 
+#search{
+  width: 200px;
+  height: 30px;
+  border-radius: 7px;
+  border: 1px solid #2756b2 ;
+  padding-left: 30px;
+}
+
+#tombolsearch{
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  margin-left: -190px;
+  cursor: pointer;
+}
+
 .main .container .nav a .button {
   display: inline-flex;
   width: 170px;
@@ -306,7 +321,7 @@ body{
     margin: 25px auto;
     font-size: 15px;
     width: auto;
-    border-radius: 7px 7px 0 0;
+    border-radius: 7px 7px 7px 7px;
     overflow: hidden;
     box-shadow: 0 1px 5px grey;
 }
@@ -320,9 +335,28 @@ body{
 .main .container table th,
 .main .container table td{
   padding: 10px 20px;
-  min-width: 100%;
-  font-size: 18px;
+  font-size: 15px;
 }
+
+#th1{
+  width: 150px;
+}
+
+#th2{
+  width: 150px;
+ }
+
+#th3{
+  width: 200px;
+}
+
+#th4{
+  width: 130px;
+ }
+
+ #th5{
+  max-width: 10%;
+ }
 
 .main .container table tbody tr{
   border-bottom: 1px solid #dddddd;
@@ -339,5 +373,27 @@ body{
 }
 
 .main .container table tbody tr:last-of-type{
- border-bottom: 2px solid #2756b2;
+ border-bottom: 1px solid #2756b2;
+}
+
+.halaman a{
+  background-color: #ffffff;
+  margin-right: 10px;
+  color: #2756b2;
+  padding: 5px 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px grey;
+}
+.halaman{
+  float: right;
+}
+.halaman a.active {
+  background-color: #2756b2;
+  color: #ffffff;
+}
+
+.halaman a:hover {
+  background-color: #2756b2;
+  color: #ffffff;
 }

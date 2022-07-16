@@ -21,7 +21,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Tambah Kegiatan</title>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/tambahkegiatan.css?<?php echo time();?>">
@@ -50,7 +50,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="laporan.php">
             <i class="bi bi-journal-text"></i>
             <span>Laporan</span>
           </a>
@@ -97,11 +97,11 @@
         <h2><span class="sub">Dashboard>Kegiatan></span><span class="subsub">Tambah Kegiatan</span></h2>
         <div class="container">
           <form method="POST" name="add_name" id="add_name">
+          <label id="judulform"><h3>Detail Kegiatan</h3></label>
             <table class="table table-bordered" id="dynamic_field">
               <thead>
                 <tr>
                   <th colspan="3">
-                    <label id="judulform"><h3>Detail Kegiatan</h3></label>
                   </th> 
                   <th></th>     
                 </tr>

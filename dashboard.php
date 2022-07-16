@@ -20,7 +20,29 @@
     $qry4 = mysqli_query($koneksi, "SELECT * FROM kegiatan WHERE status='Selesai'");
     ($data4 = mysqli_num_rows($qry4));
 
-  
+    function tgl_indo($tanggal2){
+      $bulan = array (
+        1 =>   'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember'
+      );
+      $pecahkan = explode('-', $tanggal2);
+      
+      // variabel pecahkan 0 = tanggal
+      // variabel pecahkan 1 = bulan
+      // variabel pecahkan 2 = tahun
+    
+      return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+    }
 
 ?>
 
@@ -68,7 +90,7 @@ if(mysqli_num_rows($result)>0){
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="laporan.php">
             <i class="bi bi-journal-text"></i>
             <span>Laporan</span>
           </a>
@@ -165,6 +187,7 @@ if(mysqli_num_rows($result)>0){
             while ($data7= mysqli_fetch_array($qry7)){
               $tanggal1=$data7["tanggalmulai"];
               $tanggalawal= date('d F Y', strtotime($tanggal1));
+              $tanggal3= tgl_indo ($tanggal1);
               $text="Hari Lagi !";
               $future=$data7['tanggalmulai'];
               $d= new DateTime($future);
@@ -189,7 +212,7 @@ if(mysqli_num_rows($result)>0){
                             $hitung
                           </div>
                             <div class='tanggal'>
-                              $tanggalawal
+                              $tanggal3
                             </div>
                         </div>
                         <div class='isi'>

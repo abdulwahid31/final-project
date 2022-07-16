@@ -26,8 +26,8 @@ if(mysqli_num_rows($result)>0){
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="css/123.css">
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/profile.css?<?php echo time();?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   </head>
@@ -54,7 +54,7 @@ if(mysqli_num_rows($result)>0){
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="laporan.php">
             <i class="bi bi-journal-text"></i>
             <span>Laporan</span>
           </a>

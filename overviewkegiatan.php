@@ -17,10 +17,9 @@
 
     
     $tanggal1=$data["tanggalmulai"];
-    $tanggalawal= date('d F Y', strtotime($tanggal1));
-
+    $tanggalmulai= date('Y-n-j', strtotime($tanggal1));
     $tanggal2=$data["tanggalselesai"];
-    $tanggalakhir= date('d F Y', strtotime($tanggal2));
+    $tanggalselesai= date('Y-n-j', strtotime($tanggal2));
     $text="Hari Lagi";
     $future=$data['tanggalmulai'];
     $d= new DateTime($future);
@@ -51,6 +50,30 @@
 
     $qry2 = mysqli_query($koneksi, "SELECT * FROM tahapan");
     ($data2 = mysqli_num_rows($qry2));
+
+    function tgl_indo($tanggal2){
+      $bulan = array (
+        1 =>   'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember'
+      );
+      $pecahkan = explode('-', $tanggal2);
+      
+      // variabel pecahkan 0 = tanggal
+      // variabel pecahkan 1 = bulan
+      // variabel pecahkan 2 = tahun
+    
+      return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+    }
 ?>
 
 
@@ -60,7 +83,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Overview</title>
     <link rel="stylesheet" href="css/overviewkegiatan.css?<?php echo time();?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -90,7 +113,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="laporan.php">
             <i class="bi bi-journal-text"></i>
             <span>Laporan</span>
           </a>
@@ -140,7 +163,7 @@
             <div class="kiri">
               <span class="hari"><?php echo $hitung ; ?></span><br>
               <span><h3><?php echo $data['jenis'] ;?></h3></span>
-              <span class="nama"><h4><?php echo $data['nama'] ;?><hr><div class="sub"><?php echo $tanggalawal; echo " s/d "; echo $tanggalakhir;?></div></h4></span>
+              <span class="nama"><h4><?php echo $data['nama'] ;?><hr><div class="sub"><?php echo tgl_indo($tanggalmulai); echo " s/d "; echo tgl_indo($tanggalselesai);?></div></h4></span>
             </div>
             <div class="kanan">
               <span class="edit"><a href="#popup1"><button>Edit</button></a></span>
@@ -175,12 +198,11 @@
               echo "
               <tr>
                 <td>$data8[tahapan]</td>
-                <td><a href=overviewkegiatan.php?kegiatan=$data8[idkegiatan]&tahapan=$data8[id]><i class='bi bi-trash'></i></a></td>
+                <td id='hapus'><a href=overviewkegiatan.php?kegiatan=$data8[idkegiatan]&tahapan=$data8[id]><i class='bi bi-trash'></i></a></td>
               </tr>
               ";
               }
             ?>
-    
             </tbody>
           </table>
         </div>
